@@ -1,22 +1,48 @@
 @charset "UTF-8";
 
-*{
+body{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: rgb(97, 96, 96);
 }
-.container {
+.main {
     width: 100%;
     height: 100vh;
-    background: #222;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
-.swiper {
-    width: 80%;
-    height: fit-content;
+.slider{
+    width: 800px;
+    height: 500px;
+    position: relative;
 }
-.swiper-slide img {
+.slider img {
     width: 100%;
+    height: 100%;
+    border-radius: 7px;
+}
+.btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+.btn button {
+    background: none;
+    outline: none;
+    border: none;
+    color: white;
+}
+.btn button i {
+    font-size: 70px;
+}
+.btn button:hover {
+    color: #95a5a6;
 }

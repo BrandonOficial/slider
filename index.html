@@ -6,54 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page complete</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
-
-        <div class="swiper">
-            <!-- Additional required wrapper -->
-            <div class="swiper-wrapper">
-              <!-- Slides -->
-              <div class="swiper-slide"><img src="cars/aston-martin.jpg"></div>
-              <div class="swiper-slide"><img src="cars/audi-rs-e-tron-gt.jpg"></div>
-              <div class="swiper-slide"><img src="cars/maserati-mc20.jpg"></div>
-              <div class="swiper-slide"><img src="cars/nio-et5.jpg"></div>
-
-            </div>
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-          
-            <!-- If we need navigation buttons -->
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-button-next"></div>
-          
-            
-
+   <div class="main">
+    <div class="slider">
+      <img src="cars/aston-martin.jpg" alt="img">
+      <div class="btn">
+        <button onclick="back()"><i class='bx bx-chevron-left'></i></button>
+        <button onclick="next()"><i class='bx bx-chevron-right' ></i></button>
+      </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>  
-    <script>
-      const swiper = new Swiper('.swiper', {
-  // Optional parameters
-  direction: 'vertical',
-  loop: true,
+   </div>
 
-  // If we need pagination
-  pagination: {
-    el: '.swiper-pagination',
-  },
+   <script>
 
-  // Navigation arrows
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
+    var mainimg=document.querySelector("img");
+    var images=["cars/aston-martin.jpg", "cars/audi-rs-e-tron-gt.jpg", "cars/maserati-mc20.jpg", "cars/nio-et5.jpg"];
+    var num=0;
 
-  // And if we need scrollbar
-  scrollbar: {
-    el: '.swiper-scrollbar',
-  },
-});
-    </script> 
+    function next() {
+      num++;
+      if(num>=images.length){
+        num=0;
+        mainimg.src=images[num]
+      } else {
+        mainimg.src=images[num]
+      }
+    };
+    function back() {
+      num--;
+      if(num<0){
+        num=images.length-1;
+        mainimg.src=images[num]
+      } else {
+        mainimg.src=images[num]
+      }
+    };
+   </script>
 </body>
 </html>
